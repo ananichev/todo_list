@@ -1,0 +1,30 @@
+<h1>New task_list</h1>
+
+<%= render 'form' %>
+
+<div id="main-block">
+
+  <div id="uncompleted">
+    <h2>Uncompleted</h2>
+    <ol>
+      <% @task_lists.each do |task| %>
+        <li data-id="<%= task.id %>">
+          <input type="checkbox"><span><%= task.task %></span>
+          <button>Delete</button>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div id="completed">
+    <h2>Completed</h2>
+    <ol id="ch">
+      <% @completed_tasks.each do |task| %>
+        <li data-id= "<%= task.id %>" class="unchecked">
+          <input type="checkbox" checked="checked"><span><%= task.task %></span>
+          <button>Delete</button>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+
+</div>
